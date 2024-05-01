@@ -13,6 +13,15 @@ public class FirstJavaClass {
         long lnum = -12332252626L;
         System.out.println(lnum);
 
+        int integer = 122345;
+        integer = 1 + 2;
+
+//        **** Slide 22, Non- Primitive Data Types (INTEGER)
+        Integer classInt= new Integer(134);
+        Integer integer2 = 122345;
+        Double double2 = 123.45;
+
+
         double dnum = -42937737.9d;
         System.out.println(dnum);
 
@@ -22,7 +31,19 @@ public class FirstJavaClass {
         boolean b = false;
         System.out.println(b);
 
+        String str = "Hello World!";
+        String str1 = new String("Hello World!");
+        String empty = "";
+
+        String withEscapes = "This is a string with \"quotes\" and \\slashes\\";
+        System.out.println(withEscapes);
+
         char ch = 'Z';
+
+
+
         System.out.println(ch);
+
+        long ms = System.currentTimeMillis();
     }
 }
