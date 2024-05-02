@@ -36,9 +36,19 @@ public class Homework303_2_1 {
         double div = (double)v1 / (double)v2;
         System.out.println(div);
 
+        // Write a program that declares two double variables, assigns a number to each, and divides the larger by the smaller number.
+        // Assign the result to a variable. Print out the result. Now, cast the result to an integer. Print out the result again.
+        double n1 = 10.0;
+        double n2 = 5.0;
+
+        double result = n1 / n2;
+
+        System.out.println("The result of dividing " + num1 + " by " + num2 + " is: " + result);
+        // Skipped casting
+
         //
 
-        
+
 
     }
 }
