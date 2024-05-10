@@ -16,15 +16,34 @@ public class Main {
 
         shapes.add(c);
 
-        Rectangle r = new Rectangle("name");
+        Rectangle r = new Rectangle("rectangle");
         r.setLength(10);
         r.setWidth(5);
 
         shapes.add(r);
 
+        // this is giving an error because Shape has an unimplemented method calculateArea
+        // thats why we cant make a new one.
+        /* Shape s = new Shape(); */
+
+        // the compiler can automatically go from a child to a parent without typecasting
+        // its only when you want to go from a parent to child that you need to typecast it
+        Shape s1 = new Rectangle();
+
+        // cant do this because you cant make the parent class and you cant assing a shape to a rectangle
+        /* Rectangle r1 = new Shape(); */
 
         for ( Shape shape : shapes ) {
-            System.out.println("The area of " + shape.getName() + " equals " + shape.calculateArea());
+            // in the case where you might care what kind of shape it is you need to ask
+            // using instanceof
+            if ( shape instanceof Circle ) {
+                Circle c1 = (Circle)shape;
+                c1.setDiameter(134);
+            }
+
+            //95% of the time you dont care what kind of shape it is you are just acting on all shapes
+            System.out.print("The area of " + shape.getName() + " equals " + shape.calculateArea());
+            System.out.println(" and the perimeter is " + shape.calculatePerimeter());
         }
 
     }
