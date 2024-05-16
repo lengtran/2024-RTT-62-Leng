@@ -1,4 +1,4 @@
-package org.example.Slides_303_9.Others;
+package org.example;
 
 public class SBA1Practice {
 
