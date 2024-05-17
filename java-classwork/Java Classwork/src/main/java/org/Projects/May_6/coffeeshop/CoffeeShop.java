@@ -9,11 +9,15 @@ public class CoffeeShop {
 
     // building the menu of products for sale at the coffee shop
     public void initProducts() {
-        Product coffee = new Product();
-        coffee.setPrice(5.46);
-        coffee.setName("Small Coffee");
-        coffee.setBeverage(true);
-        products.add(coffee);
+        ProductReader pr = new ProductReader();
+        List<Product> productsFromFile = pr.readProducts();
+        products.addAll(productsFromFile);
+
+        Product p1 = new Product();
+        p1.setPrice(5.46);
+        p1.setName("Small Coffee");
+        p1.setBeverage(true);
+        products.add(p1);
 
         Product largeCoffee = new Product();
         largeCoffee.setPrice(9.46);
@@ -29,6 +33,8 @@ public class CoffeeShop {
 
         Product eggSandwich = new Product(7.89, "Egg Sandwich", false, 50);
         products.add(eggSandwich);
+
+
     }
 
     // print the list of products available for sale
