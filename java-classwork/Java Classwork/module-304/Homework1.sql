@@ -87,34 +87,19 @@ ORDER  BY margin DESC;
 
 -- Q 2.5
 -- I want to see the top 5 customers in each state based on margin
-SELECT * FROM (SELECT c.customer_name, c.state, SUM(od.quantity_ordered * (p.msrp-p.buy_price)) AS margin,
-                      ROW_NUMBER() OVER (PARTITION BY c.state ORDER BY SUM(od.quantity_ordered * (p.msrp-p.buy_price)) DESC) AS state_rank
-               FROM customers c,
-                    orderdetails od,
-                    products p,
-                    orders o
-               WHERE o.customer_id = c.id
-                 AND od.order_id = o.id
-                 AND od.product_id = p.id
-                 AND c.country = "USA"
-               GROUP BY c.id, c.state
-               ORDER BY c.state, margin DESC) whatever_table_name
-where state_rank <= 5;
-WITH result_table AS (
-    SELECT c.customer_name,
-           c.state,
-           SUM(od.quantity_ordered * (p.msrp-p.buy_price)) AS margin,
-           ROW_NUMBER() OVER (PARTITION BY c.state ORDER BY SUM(od.quantity_ordered * (p.msrp-p.buy_price)) DESC) AS state_rank
-    FROM customers c, orderdetails od, products p, orders o
-    WHERE o.customer_id = c.id
-      AND od.order_id = o.id
-      AND od.product_id = p.id
-      AND c.country = "USA"
-    GROUP BY c.id, c.state
-    ORDER BY c.state, margin DESC)
-SELECT customer_name, state, margin, state_rank
-FROM result_table
-WHERE state_rank <= 5;
+SELECT customer_name, state, profit_margin
+FROM (	SELECT  c.customer_name, c.state,
+                  SUM(p.msrp - p.buy_price) AS profit_margin,
+                  (ROW_NUMBER() over (partition by state order by SUM(p.msrp - p.buy_price) DESC)) AS row_num
+          FROM customers c
+                   INNER JOIN orders o ON c.id = o.customer_id
+                   INNER JOIN orderdetails od ON o.id = od.order_id
+                   INNER JOIN products p ON p.id = od.product_id
+          WHERE c.state IS NOT NULL
+            AND c.country = 'USA'
+          GROUP BY c.id , c.state
+          ORDER BY c.state , profit_margin DESC ) as  subquery
+WHERE row_num <= 5;
 
 
 -- Q 3
@@ -202,19 +187,12 @@ ORDER  BY status;
 -- Q 8
 -- I want to see the office name and the distinct product lines that have been sold in that office. This will require joining almost all of the tables.
 -- select distinct o.name as office_name, pl.productlines as product_line_name  ....
-SELECT DISTINCT offices.city AS office_name,
-                pl.product_line AS product_line_name
-FROM   offices,
-       productlines pl,
-       orderdetails od,
-       customers c,
-       employees e,
-       products p,
-       orders o
-WHERE  o.customer_id = c.id
-  AND c.sales_rep_employee_id = e.id
-  AND p.productline_id = pl.id
-  AND od.product_id = p.id
-  AND od.order_id = o.id
-ORDER  BY office_name,
-          product_line_name;
+SELECT DISTINCT off.city AS 'office_name', pl.product_line AS 'product_line'
+FROM   offices off
+           INNER JOIN employees e ON off.id = e.office_id
+           INNER JOIN customers c ON e.id = c.sales_rep_employee_id
+           INNER JOIN orders o ON c.id = o.customer_id
+           INNER JOIN orderdetails od ON o.id = od.order_id
+           INNER JOIN products p ON p.id = od.product_id
+           INNER JOIN productlines pl ON p.productline_id = pl.id
+ORDER BY off.city;
