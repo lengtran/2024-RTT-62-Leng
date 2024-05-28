@@ -2,5 +2,5 @@
 
 ## Hi Donovan! Looking for my class commits? 
 
-## [Click here for 303!](https://github.com/lengtran/2024-RTT-62-Leng/tree/main/java-classwork/Java%20Classwork/src/main/java/org/example "Java")
-## [Click here for 303!](https://github.com/lengtran/2024-RTT-62-Leng/tree/main/java-classwork/Java%20Classwork/module-304 "SQL")
+## [Click here for 303 Java!](https://github.com/lengtran/2024-RTT-62-Leng/tree/main/java-classwork/Java%20Classwork/src/main/java/org/example "Java")
+## [Click here for 304 SQL!](https://github.com/lengtran/2024-RTT-62-Leng/tree/main/java-classwork/Java%20Classwork/module-304 "SQL")
