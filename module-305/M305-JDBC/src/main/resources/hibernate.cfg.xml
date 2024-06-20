@@ -5,26 +5,36 @@
 
 <hibernate-configuration>
     <session-factory>
+        <!-- these 2 lines tell hibernate that we are using MySQL database -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
 
+        <!-- this is the database connection information -->
         <property name="connection.url">jdbc:mysql://localhost/database</property>
         <property name="connection.username">root</property>
         <property name="connection.password">crazydev123</property>
 
+        <!-- connection pool reduces the load on the server -->
         <property name="connection.pool_size">3</property>
-        <property name="current_session_context_class">thread</property>
 
-        <property name="show_sql">true</property>
+        <!-- these next 2 are nice to show what query hibernate is running you can turn them on and off -->
+        <property name="show_sql">false</property>
         <property name="format_sql">true</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
 
+
+        <!-- this is the validation for hibernate  -->
         <property name="hbm2ddl.auto">validate</property>
 
-        <mapping class="org.example.database2.entity.Employee"/>
-        <mapping class="org.example.database2.entity.Customer"/>
-        <mapping class="org.example.database2.entity.Order"/>
-        <mapping class="org.example.database2.entity.OrderDetail"/>
-        <mapping class="org.example.database2.entity.Product"/>
+        <!--        <property name="current_session_context_class">thread</property>-->
+
+        <!-- this tells hibernate which entities you have in your project -->
+        <!-- each entity needs to have a line here in the config file -->
+        <mapping class="org.example.database.entity.Employee"/>
+        <mapping class="org.example.database.entity.Customers"/>
+        <mapping class="org.example.database.entity.OrderDetails"/>
+        <mapping class="org.example.database.entity.Orders"/>
+        <mapping class="org.example.database.entity.Products"/>
 
     </session-factory>
 </hibernate-configuration>

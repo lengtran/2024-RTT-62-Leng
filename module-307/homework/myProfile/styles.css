@@ -1,0 +1,105 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+  background-color: steelblue;
+}
+
+.header-section {
+  width: 90%;
+  max-width: 990px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1,
+h2 {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+.linkedin-span {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  border-radius: 25px;
+  padding-right: 2px;
+  padding-left: 2px;
+  background-color: #d4e9ff;
+}
+
+.linkedin-span:hover {
+  background-color: darkgrey;
+  cursor: pointer;
+}
+
+.linkedin-icon {
+  width: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: cadetblue;
+  font-size: 20px;
+}
+
+.interests {
+  display: flow;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: dimgray;
+  padding: 100px 100px;
+}
+
+.summary-section {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #ffdef8; */
+  background-color: lightslategrey;
+  padding: 20px 50px;
+}
+.per-scholas-section {
+  display: flex;
+  flex-direction: column;
+  background-color: lightslategrey;
+  padding: 20px 50px;
+}
+.w-80 {
+  width: 80%;
+  max-width: 900px;
+}
+
+.my-picture {
+  height: 250px;
+  margin-right: 400px;
+  border-radius: 0%;
+  border: 5px solid #fff;
+}
