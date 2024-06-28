@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Rent-A-Pet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Internal CSS */
+    .navbar {
+      background-color: #e3f2fd; /* Class selector */
+    }
+
+    .modal-title {
+      font-weight: bold; /* Class selector */
+    }
+
+    .form-label {
+      color: #6c757d; /* Class selector */
+    }
+
+    .form-check-label {
+      font-style: italic; /* Class selector */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">Rent-A-Pet</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a> <!-- Changed from PageOne -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a> <!-- Changed from PageTwo -->
+          </li>
+        </ul>
+        <!-- Buttons for modals -->
+        <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#signupModal">
+          Sign Up
+        </button>
+        <button type="button" class="btn btn-blue me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+          Log In
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Image above About Section -->
+  <center>
+  <div class="about_img">
+    <div style="width: 30%;"> <!-- Center aligns content horizontally -->
+      <img src="https://lirp.cdn-website.com/afb29759/dms3rep/multi/opt/Yorkshire+Terrier+Playing+Frisbee+%28425+x+342%29-min-1920w.jpg" class="card-img-top img-fluid mx-auto d-block" alt="Image Description">
+    </div>
+  </div>
+</center>
+
+  <!-- About Section -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <div class="card" style="border-radius: 5px;">
+          <div class="card-body">
+            <h5 class="card-title">About Us</h5>
+            <p class="card-text">"Welcome to Rent-A-Pet, where furry joy is just a lease away! I'm your purr-sonable guide to finding the perfect temporary fur-ever friend. Whether you're craving canine cuddles or feline frolics, we've got a tail-wagging, whisker-twitching companion waiting just for you. From renting rambunctious rabbits to sharing sunny strolls with sociable spaniels, we make finding your ideal pet as easy as ordering a pizza (minus the cheesy crust). So, let's fetch some fun and unleash those smiles! Rent-A-Pet: because happiness shouldn't just wag its tail; it should rent it!"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Banner -->
+  <div class="container-fluid bg-dark text-white mt-5">
+    <div class="row py-4">
+      <div class="col-md-12">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col" colspan="2">Rent-A-Pet :: Designed and built with Leng's SBA 307/308 grade in mind.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Code probably not licensed and for class/personal use.</td>
+              
+            </tr>
+            <tr>
+              <td colspan="2">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="about.html" class="text-white">About Me</a></li>
+                    <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

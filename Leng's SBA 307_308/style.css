@@ -1,0 +1,42 @@
+/* External CSS */
+body {
+    background-color: #f8f9fa; /* Universal selector */
+  }
+  
+  .navbar-brand {
+    color: #007bff !important; 
+  }
+  
+  .card {
+    font-family: 'Raleway', sans-serif; 
+    border: 2px solid #007bff; 
+  }
+  
+  .card-title {
+    color: #dc3545; 
+  }
+  
+  .card-text {
+    font-size: 1.1rem; 
+  }
+  
+  .btn-primary {
+    background-color: #28a745; 
+    border-color: #28a745; 
+  }
+  
+  .btn-primary:hover {
+    background-color: #218838; 
+    border-color: #1e7e34; 
+  }
+  
+  .btn-blue {
+    background-color: #007bff; 
+    border-color: #007bff; 
+  }
+  
+  .btn-blue:hover {
+    background-color: #0056b3; 
+    border-color: #004085; 
+  }
+  
