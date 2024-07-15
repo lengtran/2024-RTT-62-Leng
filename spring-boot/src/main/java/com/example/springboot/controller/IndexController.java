@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 
 @Slf4j
 @Controller
 public class IndexController {
     @Autowired
     private ProductDAO productDAO;
+
+
 
     @GetMapping("/")
     public ModelAndView index(@RequestParam(required = false) Integer id) {
@@ -59,9 +63,17 @@ public class IndexController {
         return response;
     }
 
-    @GetMapping("/another-page-url")
-    public ModelAndView anotherPage() {
-        ModelAndView response = new ModelAndView("another-page");
+    @GetMapping("/search")
+    public ModelAndView search(@RequestParam(required = false) String search) {
+
+        ModelAndView response = new ModelAndView("search");
+
+        log.debug("The user searched for the term: " + search);
+        response.addObject("search", search);
+
+        List<Product> products = productDAO.findByName(search);
+        response.addObject("products", products);
+
         return response;
     }
 

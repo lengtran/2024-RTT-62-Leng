@@ -28,7 +28,10 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/another-page">2nd Page</a>
+                    <a class="nav-link" href="/another-page">Another Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search">Search</a>
                 </li>
             </ul>
         </div>
