@@ -31,7 +31,13 @@
                     <a class="nav-link" href="/another-page">Another Page</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/search">Search</a>
+                    <a class="nav-link" href="/search">Product Lookup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/employee/search">Employee Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/employee/create">Employee Create</a>
                 </li>
             </ul>
         </div>
